@@ -6,6 +6,14 @@ public class DominoTable {
 	private DominoTile[] tiles;
 	private int firstFreeIndex;
 	
+	private DominoTableEvent event;
+	
+	
+	public void addDominoTableEvent(DominoTableEvent event)
+	{
+		this.event = event;
+	}
+	
 	public DominoTable()
 	{
 		tiles = new DominoTile[NUMBER_OF_TILES];
@@ -34,6 +42,10 @@ public class DominoTable {
 				}
 				tiles[0] = tile;
 				firstFreeIndex++;
+				if(event != null)
+				{
+					event.onDominoTileAdded();
+				}
 				return true;
 			}
 			else
@@ -47,6 +59,10 @@ public class DominoTable {
 					}
 					tiles[0] = tile;
 					firstFreeIndex++;
+					if(event != null)
+					{
+						event.onDominoTileAdded();
+					}
 					return true;
 				}
 				return false;
@@ -61,6 +77,10 @@ public class DominoTable {
 		{
 			tiles[firstFreeIndex] = tile;
 			firstFreeIndex++;
+			if(event != null)
+			{
+				event.onDominoTileAdded();
+			}
 			return true;
 		}
 		else
@@ -101,5 +121,6 @@ public class DominoTable {
 				System.out.println(tile);
 			}
 		}
+		System.out.println();
 	}
 }
