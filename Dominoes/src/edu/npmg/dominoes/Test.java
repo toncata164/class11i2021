@@ -14,6 +14,10 @@ public class Test {
 		
 		//Ako na masata se poqvi novo pulche budi taka lubezen da q prerisuvash
 		
+		DominoTableEventImplementation tableEvent = new 
+				DominoTableEventImplementation(table);
+	
+		/*
 		DominoTableEvent tableEvent = new DominoTableEvent()
 		{
 
@@ -22,7 +26,7 @@ public class Test {
 				table.printTable();
 			}
 			
-		};
+		};*/
 		table.addDominoTableEvent(tableEvent);
 		
 		table.addLeft(tile4);
@@ -62,3 +66,4 @@ public class Test {
 
 }
 // 1,6 / 6,5 / 5,0 /
+
