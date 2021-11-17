@@ -1,7 +1,7 @@
 package edu.school.test;
 
-import edu.schoo.chess.Figure;
-import edu.schoo.chess.Rook;
+import edu.school.chess.Figure;
+import edu.school.chess.Rook;
 import edu.school.enums.FigureColor;
 
 public class Test {

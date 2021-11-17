@@ -1,4 +1,4 @@
-package edu.schoo.chess;
+package edu.school.chess;
 
 import edu.school.enums.FigureColor;
 
