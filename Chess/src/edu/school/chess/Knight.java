@@ -9,21 +9,7 @@ public class Knight extends Figure {
         super(row, col, color);
     }
 
-    boolean checkForSameColorOnDestination(Figure[] figures, int destinationRow, int destinationColumn)
-    {
-        for(Figure f : figures)
-		{
-			if(f == null) 
-				continue;
-                
-			if(f.getRow() == destinationRow && f.getColumn() == destinationColumn && f.getColor().equals(this.getColor()))
-            {
-                return false;
-            }
-		}  
-
-        return true;
-    }
+   
 
     @Override
     public void move(Figure[] figures, int destinationRow, int destinationColumn) 
