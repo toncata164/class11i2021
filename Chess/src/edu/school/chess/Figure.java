@@ -49,6 +49,21 @@ public abstract class Figure {
 		this.color = color;
 		setSelected(false);
 	}
+	protected boolean checkForSameColorOnDestination(Figure[] figures, int destinationRow, int destinationColumn)
+    {
+        for(Figure f : figures)
+		{
+			if(f == null) 
+				continue;
+                
+			if(f.getRow() == destinationRow && f.getColumn() == destinationColumn && f.getColor().equals(this.getColor()))
+            {
+                return false;
+            }
+		}  
+
+        return true;
+    }
 
 	public String toString() {
 		return String.format("Row: %d,Column: %d,Color: %s", getRow(), getColumn(), getColor());
