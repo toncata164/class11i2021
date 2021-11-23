@@ -1,5 +1,6 @@
 package edu.school.test;
 
+import edu.school.chess.Bishop;
 import edu.school.chess.Figure;
 import edu.school.chess.Knight;
 import edu.school.chess.Rook;
@@ -20,6 +21,9 @@ public class Test {
 		Knight k3 = new Knight(8, 2, FigureColor.BLACK);
 		Knight k4 = new Knight(8, 7, FigureColor.BLACK);
 
+		//bishop tests
+		Bishop b1 = new Bishop(5, 5, FigureColor.WHITE);
+
 		Figure[] figures = new Figure[32];
 		figures[0] = r1; 
 		figures[1] = r2;
@@ -29,7 +33,8 @@ public class Test {
 		figures[5] = k2;
 		figures[6] = k3;
 		figures[7] = k4;
-		
+		figures[8] = b1;
+
 		// r1.setSelected(true);
 		// r1.move(figures, 1, 5);
 		// r1.setSelected(false);
@@ -62,6 +67,21 @@ public class Test {
 		k2.setSelected(false);
 
 		printTable(figures);
+		System.out.println();
+
+		b1.setSelected(true);
+		b1.move(figures, 6, 6);
+		b1.setSelected(false);
+
+		printTable(figures);
+		System.out.println();
+
+		b1.setSelected(true);
+		b1.move(figures, 2, 2);
+		b1.setSelected(false);
+
+		printTable(figures);
+		System.out.println();
 	}
 
 	public static void printTable(Figure[] figures)
