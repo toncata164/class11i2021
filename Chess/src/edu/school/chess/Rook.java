@@ -22,7 +22,8 @@ public class Rook extends Figure{
 		//check if we have same color figure on our destination
 		for(Figure f : figures)
 		{
-			if(f == null) continue;
+			if(f == null) 
+				continue;
 			if(f.getRow() == destinationRow && f.getColumn() == destinationColumn &&
 					f.getColor().equals(this.getColor()))
 				return;
@@ -82,7 +83,5 @@ public class Rook extends Figure{
 	public String toString()
 	{
 		return getColor().equals(FigureColor.WHITE) ? "R" : "r";
-	}
-	
-	
+	}		
 }

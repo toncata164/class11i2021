@@ -1,6 +1,7 @@
 package edu.school.test;
 
 import edu.school.chess.Figure;
+import edu.school.chess.Knight;
 import edu.school.chess.Rook;
 import edu.school.enums.FigureColor;
 
@@ -8,42 +9,58 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		Rook r1 = new Rook(1,1,FigureColor.WHITE);
-		Rook r2 = new Rook(1,8,FigureColor.WHITE);
-		Rook r3 = new Rook(8,1,FigureColor.BLACK);
-		Rook r4 = new Rook(8,8,FigureColor.BLACK);
+		Rook r1 = new Rook(1, 1, FigureColor.WHITE);
+		Rook r2 = new Rook(1, 8, FigureColor.WHITE);
+		Rook r3 = new Rook(8, 1, FigureColor.BLACK);
+		Rook r4 = new Rook(8, 8, FigureColor.BLACK);
 		
 		//Knight->
-		
-		
+		Knight k1 = new Knight(1, 2, FigureColor.WHITE);
+		Knight k2 = new Knight(1, 7, FigureColor.WHITE);
+		Knight k3 = new Knight(8, 2, FigureColor.BLACK);
+		Knight k4 = new Knight(8, 7, FigureColor.BLACK);
+
 		Figure[] figures = new Figure[32];
 		figures[0] = r1; 
 		figures[1] = r2;
 		figures[2] = r3;
 		figures[3] = r4;
+		figures[4] = k1;
+		figures[5] = k2;
+		figures[6] = k3;
+		figures[7] = k4;
 		
-		r1.setSelected(true);
-		r1.move(figures, 1, 5);
-		r1.setSelected(false);
+		// r1.setSelected(true);
+		// r1.move(figures, 1, 5);
+		// r1.setSelected(false);
 		
-		printTable(figures);
-		System.out.println();
+		// printTable(figures);
+		// System.out.println();
 		
-		r2.setSelected(true);
-		r2.move(figures, 1, 7);
-		r2.setSelected(false);
+		// r2.setSelected(true);
+		// r2.move(figures, 1, 7);
+		// r2.setSelected(false);
 		
-		r3.setSelected(true);
-		r3.move(figures, 2, 1);
-		r3.setSelected(false);
+		// r3.setSelected(true);
+		// r3.move(figures, 2, 1);
+		// r3.setSelected(false);
 		
-		r4.setSelected(true);
-		r4.move(figures, 1, 8);
-		r4.setSelected(false);
+		// r4.setSelected(true);
+		// r4.move(figures, 1, 8);
+		// r4.setSelected(false);
 		
-		r4.setSelected(true);
-		r4.move(figures, 1, 7);
-		r4.setSelected(false);
+		// r4.setSelected(true);
+		// r4.move(figures, 1, 7);
+		// r4.setSelected(false);
+		
+		k1.setSelected(true);
+		k1.move(figures, 3, 3);
+		k1.setSelected(false);
+
+		k2.setSelected(true);
+		k2.move(figures, 2, 5);
+		k2.setSelected(false);
+
 		printTable(figures);
 	}
 
