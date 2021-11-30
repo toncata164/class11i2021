@@ -49,7 +49,21 @@ public abstract class Figure {
 		this.color = color;
 		setSelected(false);
 	}
-	protected boolean checkForSameColorOnDestination(Figure[] figures, int destinationRow, int destinationColumn)
+
+	protected boolean isDestinationOccupied(Figure[] figures, int destinationRow, int destinationColumn){
+		for(Figure f : figures) {
+			if (f == null)
+				continue;
+
+			if(f.getRow() == destinationRow && f.getColumn() == destinationColumn)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	protected boolean isSameColorOnDestination(Figure[] figures, int destinationRow, int destinationColumn)
     {
         for(Figure f : figures)
 		{
@@ -58,11 +72,11 @@ public abstract class Figure {
                 
 			if(f.getRow() == destinationRow && f.getColumn() == destinationColumn && f.getColor().equals(this.getColor()))
             {
-                return false;
+                return true;
             }
 		}  
 
-        return true;
+        return false;
     }
 
 	public String toString() {

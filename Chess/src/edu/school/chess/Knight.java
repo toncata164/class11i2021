@@ -25,7 +25,7 @@ public class Knight extends Figure {
 
         if(getRow() == destinationRow - 2 && getColumn() == destinationColumn - 1)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -33,7 +33,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow - 2 && getColumn() == destinationColumn + 1)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -41,7 +41,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow + 2 && getColumn() == destinationColumn + 1)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -49,7 +49,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow + 2 && getColumn() == destinationColumn - 1)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -57,7 +57,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow - 1 && getColumn() == destinationColumn - 2)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -65,7 +65,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow - 1 && getColumn() == destinationColumn + 2)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -73,7 +73,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow + 1 && getColumn() == destinationColumn - 2)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
@@ -81,7 +81,7 @@ public class Knight extends Figure {
         }
         else if(getRow() == destinationRow + 1 && getColumn() == destinationColumn + 2)
         {
-            if(checkForSameColorOnDestination(figures, destinationRow, destinationColumn))
+            if(!isSameColorOnDestination(figures, destinationRow, destinationColumn))
             {
                 setRow(destinationRow);
                 setColumn(destinationColumn);
