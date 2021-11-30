@@ -14,7 +14,7 @@ public class Time
         }
     }
 
-    public void setMinnute(int minuteValue)
+    public void setMinute(int minuteValue)
     {
         if(minuteValue >= 0 && minuteValue < 60)
         {
@@ -48,14 +48,14 @@ public class Time
     public Time(int hour, int minute, int second)
     {
         setHour(hour);
-        setMinnute(minute);
+        setMinute(minute);
         setSecond(second);
     }
 
     public Time()
     {
         setHour(0);
-        setMinnute(0);
+        setMinute(0);
         setSecond(0);
     }
 
@@ -93,23 +93,32 @@ public class Time
 
     public void increaseSecond()
     {
-        second ++;
-
-        if(second > 60)
+        if(getSecond() == 59)
         {
-            second = 0;
-            minute ++;
+            setSecond(0);
+ 
+            if(getMinute() == 59)
+            {
+                setMinute(0);
+
+                if(getHour() == 23)
+                {
+                    setHour(0);
+                }
+                else
+                {
+                    setHour(getHour() + 1);
+                }
+            }
+            else
+            {
+                setMinute(getMinute() + 1);
+            }
+        }
+        else
+        {
+            setSecond(getSecond() + 1);
         }
 
-        if(minute > 60)
-        {
-            minute = 0;
-            hour ++;
-        }
-
-        if(hour > 24)
-        {
-            hour = 0;
-        }
     }
 }
