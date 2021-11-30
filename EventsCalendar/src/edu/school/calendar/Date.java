@@ -66,7 +66,7 @@ public class Date {
 		return res;
 	}
 	
-	public Date nextDate() {
+	/*public Date nextDate() {
 		setDay(getDay() + 1);
 		
 		if(getMonth() == 1 || getMonth() == 3 || getMonth() == 5 || getMonth() == 7 ||getMonth() == 8 || getMonth() == 10 || getMonth() == 12) {
@@ -93,5 +93,33 @@ public class Date {
 		
 		return ;
 		
+	}*/
+	
+	public DayOfWeek getDayOfWeek() {
+		
+		if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 1) {
+			return DayOfWeek.MONDAY;
+		}
+		else if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 2) {
+			return DayOfWeek.TUESDAY;
+		}
+		else if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 3) {
+			return DayOfWeek.WEDNESDAY;
+		}
+		else if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 4) {
+			return DayOfWeek.THURSDAY;
+		}
+		else if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 5) {
+			return DayOfWeek.FRIDAY;
+		}
+		else if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 6) {
+			return DayOfWeek.SATURDAY;
+		}
+		else if(getMonth() == 11 && getYear() == 2021 && getDay()%7 == 0) {
+			return DayOfWeek.SUNDAY;
+		}
+		return null;
+		
 	}
+	
 }
