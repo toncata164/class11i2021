@@ -1,4 +1,6 @@
-package edu.school.calendar;
+package edu.school.calendar.test;
+
+import edu.school.calendar.Time;
 
 public class Test 
 {
