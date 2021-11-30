@@ -59,7 +59,7 @@ public class Time
         setSecond(0);
     }
 
-    String toString()
+    public String toString()
     {
         String res = "";
 
@@ -67,13 +67,25 @@ public class Time
         {
             res += "0" + getHour() + ":";
         }
+        else
+        {
+        	res += getHour() + ":";
+        }
         if(getMinute() < 10)
         {
             res += "0" + getMinute() + ":";
         }
+        else
+        {
+        	res += getMinute() + ":";
+        }
         if(getSecond() < 10)
         {
             res += "0" + getSecond();
+        }
+        else
+        {
+        	res += getSecond();
         }
 
         return res;
