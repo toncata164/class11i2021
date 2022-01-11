@@ -1,5 +1,10 @@
 package edu.school.models;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 public class SVGPicture {
 	private SVGObject[] objects;
 	private int index;
@@ -24,12 +29,23 @@ public class SVGPicture {
 	
 	public String toString()
 	{
-		String result = "<svg width=\"500\" height=\"500\">";
+		String result = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\">";
 		for(int i = 0; i<index; i++)
 		{
 			result += objects[i].toSvgCode();
 		}
 		result += "</svg>";
 		return result;
+	}
+	
+	public void saveToFile(String filepath)
+	{
+		try {
+			Files.writeString(Paths.get(filepath),
+					toString(), StandardOpenOption.CREATE_NEW);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
