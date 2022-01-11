@@ -35,29 +35,35 @@ public class Test {
 		figures[7] = k4;
 		figures[8] = b1;
 
-		// r1.setSelected(true);
-		// r1.move(figures, 1, 5);
-		// r1.setSelected(false);
+		 r1.setSelected(true);
+		 r1.move(figures, 1, 5);
+		 r1.setSelected(false);
 		
-		// printTable(figures);
-		// System.out.println();
+		 printTable(figures);
+		 System.out.println();
 		
-		// r2.setSelected(true);
-		// r2.move(figures, 1, 7);
-		// r2.setSelected(false);
+		 r2.setSelected(true);
+		 r2.move(figures, 1, 7);
+		 r2.setSelected(false);
 		
-		// r3.setSelected(true);
-		// r3.move(figures, 2, 1);
-		// r3.setSelected(false);
+		 r3.setSelected(true);
+		 r3.move(figures, 2, 1);
+		 r3.setSelected(false);
 		
-		// r4.setSelected(true);
-		// r4.move(figures, 1, 8);
-		// r4.setSelected(false);
+		 printTable(figures);
+		 
+		 r4.setSelected(true);
+		 r4.move(figures, 1, 8);
+		 r4.setSelected(false);
+		 
+		 printTable(figures);
 		
-		// r4.setSelected(true);
-		// r4.move(figures, 1, 7);
-		// r4.setSelected(false);
+		 r4.setSelected(true);
+		 r4.move(figures, 1, 7);
+		 r4.setSelected(false);
 		
+		 printTable(figures);
+		/*
 		k1.setSelected(true);
 		k1.move(figures, 3, 3);
 		k1.setSelected(false);
@@ -65,7 +71,7 @@ public class Test {
 		k2.setSelected(true);
 		k2.move(figures, 2, 5);
 		k2.setSelected(false);
-
+*/
 		printTable(figures);
 		System.out.println();
 

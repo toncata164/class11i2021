@@ -48,8 +48,7 @@ public class Rook extends Figure{
 						continue;
 					if(f == this)
 						continue;
-					if(f.getColumn() == i && f.getRow() == getRow() && 
-							!f.getColor().equals(getColor()))
+					if(f.getColumn() == i && f.getRow() == getRow())
 						return;
 				}
 			}
