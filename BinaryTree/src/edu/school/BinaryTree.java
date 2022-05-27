@@ -30,6 +30,13 @@ public class BinaryTree<T extends Comparable<T>>
 		root = null;
 	}
 	
+	public T getRootData()
+	{
+		if(!isEmpty())
+			return root.data;
+		return null;
+	}
+	
 	public boolean isEmpty()
 	{
 		return root == null;
@@ -50,8 +57,8 @@ public class BinaryTree<T extends Comparable<T>>
 	{
 		if(current == null)
 			return null;
-		if(data.compareTo(current.left.data) == 0 || 
-				data.compareTo(current.right.data) == 0)
+		if((current.left != null && data.compareTo(current.left.data) == 0) || 
+				(current.right != null && data.compareTo(current.right.data) == 0))
 		{
 			return current;
 		}
@@ -65,6 +72,38 @@ public class BinaryTree<T extends Comparable<T>>
 	
 	public void remove(T data)
 	{
+		if(data.compareTo(root.data) == 0)
+		{
+			if(root.isLeaf())
+			{
+				root = null;
+				return;
+			}
+			
+			Node<T> max = findMax(root.left);
+			Node<T> min = findMin(root.right);
+			if(max.isLeaf())
+			{
+				Node<T> parentMax = findParent(max.data, root);
+				root.data = max.data;
+				parentMax.right = null;
+			}
+			else if(min.isLeaf())
+			{
+				Node<T> parentMin = findParent(min.data, root);
+				root.data = min.data;
+				parentMin.left = null;
+			}
+			else
+			{
+				Node<T> parentOfMax = findParent(max.data, root);
+				root.data = max.data;
+				parentOfMax.right = max.left;
+			}
+		}
+		
+		
+		
 		Node<T> parent = findParent(data, root);
 		if(parent == null)
 			return;
@@ -72,22 +111,104 @@ public class BinaryTree<T extends Comparable<T>>
 		{
 			if(parent.right.isLeaf())
 			{
-				
+				parent.right = null;
 			}
 			else if(parent.right.children() == 1)
 			{
-				
+				Node<T> toRemove = parent.right;
+				if(toRemove.left != null)
+				{
+					parent.right = toRemove.left;
+				}
+				if(toRemove.right != null)
+				{
+					parent.right = toRemove.right;
+				}
 			}
 			else
 			{
-				
+				Node<T> toRemove = parent.right;
+				Node<T> max = findMax(toRemove.left);
+				Node<T> min = findMin(toRemove.right);
+				if(max.isLeaf())
+				{
+					
+					Node<T> parentOfMax = findParent(max.data, toRemove);
+					toRemove.data = max.data;
+					parentOfMax.right = null;
+				}
+				else if(min.isLeaf())
+				{
+					Node<T> parentOfMin = findParent(min.data, toRemove);
+					toRemove.data = min.data;
+					parentOfMin.left = null;
+				}
+				else
+				{
+					Node<T> parentOfMax = findParent(max.data, toRemove);
+					toRemove.data = max.data;
+					parentOfMax.right = max.left;
+				}
 			}
 			
 		}
 		else //left
 		{
-			
+			if(parent.left.isLeaf())
+			{
+				parent.left = null;
+			}
+			else if(parent.left.children() == 1)
+			{
+				Node<T> toRemove = parent.left;
+				if(toRemove.left != null)
+				{
+					parent.left = toRemove.left;
+				}
+				if(toRemove.right != null)
+				{
+					parent.left = toRemove.right;
+				}
+			}
+			else
+			{
+				Node<T> toRemove = parent.left;
+				Node<T> max = findMax(toRemove.left);
+				Node<T> min = findMin(toRemove.right);
+				if(max.isLeaf())
+				{
+					Node<T> parentOfMax = findParent(max.data, toRemove);
+					toRemove.data = max.data;
+					parentOfMax.right = null;
+				}
+				else if(min.isLeaf())
+				{
+					Node<T> parentOfMin = findParent(min.data, toRemove);
+					toRemove.data = min.data;
+					parentOfMin.left = null;
+				}
+				else
+				{
+					Node<T> parentOfMax = findParent(max.data, toRemove);
+					toRemove.data = max.data;
+					parentOfMax.right = max.left;
+				}
+			}
 		}
+	}
+	
+	private Node<T> findMin(Node<T> start)
+	{
+		if(start.left == null)
+			return start;
+		return findMin(start.left);
+	}
+	
+	private Node<T> findMax(Node<T> start)
+	{
+		if(start.right == null)
+			return start;
+		return findMax(start.right);
 	}
 	
 	private void add(T data, Node<T> current)
@@ -120,5 +241,19 @@ public class BinaryTree<T extends Comparable<T>>
 		{
 			throw new RuntimeException("Element already exists!");
 		}
+	}
+	
+	public void printTree()
+	{
+		printTree(root);
+	}
+	
+	private void printTree(Node<T> current)
+	{
+		if(current == null)
+			return;
+		printTree(current.left);
+		System.out.print(current.data+" ");
+		printTree(current.right);
 	}
 }
